@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class HelloRequest {
 
-	private String peopleName; 
+	private String personName; 
 }

@@ -6,15 +6,19 @@ server:
 grpc:
   client:
     grpc-server:
-      address: localhost:8211
+      address: ${GRPC_SPEAK_ADDRESS:localhost:8211}
       enableKeepAlive: true
       keepAliveWithoutCalls: true
       permitKeepAliveWithoutCalls: true
-      keepAliveTime: ${GRPC_KEEP_ALIVE_TIME:60}
-      keepAliveTimeout: ${GRPC_KEEP_ALIVE_TIMEOUT:20}
+      keepAliveTime: ${GRPC_CLIENT_KEEP_ALIVE_TIME:60}
+      keepAliveTimeout: ${GRPC_CLIENT_KEEP_ALIVE_TIMEOUT:20}
       negotiationType: PLAINTEXT
 
+http:
+  speakAddress: ${HTTP_SPEAK_ADDRESS:http://localhost:8011/api-speak/v1/hello}
+
 logging:
-  file: api-speak.log
+  file:
+    name: api-speak.log
   level:
     root: ${LOGGING_LEVEL:info}
