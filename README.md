@@ -19,16 +19,18 @@ You have installed:
 ## Initialize Project 
 **Execute this commands on the project folder**
 
+- In the folder where is Dockerfile, you must execute:
 ```sh
-In the folder where is pom.xml, execute:
+# build project with your dependencies
 mvn clean package
 
-Generate image:
+# Generate image:
 docker build -t escudeler/api-listen .
 ```
 
-**In the folder where is docker-compose.yml, you must up container**
+- In the folder where is docker-compose.yml, you must execute:
 ```sh
+# up container
 docker-compose up -d
 ```
 
